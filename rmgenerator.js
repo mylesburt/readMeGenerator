@@ -70,5 +70,37 @@ inquirer
             email
         } = answers;
 
+        const READMEfile = '# ${title}
 
-    })
+        ## * Table of Contents *
+
+            -[Description](#description)
+            - [Installation](#installation)
+            - [Usage](#usage)
+            - [License](#license)
+            - [Constributors](#contributors)
+            - [Input](#input)
+            - [Questions](#questions)
+
+        ## * Description *
+            ${ description }
+
+        ## * Installation *
+            ${ installation }
+
+        ## * Usage *
+            ${ usage }
+
+        ## * Contributors *
+            ${ contributors }
+
+        ## * Input *
+            ${ input }
+
+        ## * Questions *
+            - Github: ${ github }
+        - Email: ${ email }
+
+        This project is ${ license } licensed.'
+
+    });
