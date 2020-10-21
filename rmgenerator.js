@@ -57,5 +57,18 @@ inquirer
             name: "email"
         }
 
+    ]).then(answers => {
+        const {
+            title,
+            description,
+            installation,
+            usage,
+            license,
+            contributors,
+            input,
+            github,
+            email
+        } = answers;
 
-    ])
+
+    })
