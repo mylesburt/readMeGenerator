@@ -48,12 +48,12 @@ inquirer
         },
         {
             type: "input",
-            message: "What is your GitHub username?"
+            message: "What is your GitHub username?",
             name: "github"
         },
         {
             type: "input",
-            message: "What is your email address?"
+            message: "What is your email address?",
             name: "email"
         }
 
@@ -70,11 +70,11 @@ inquirer
             email
         } = answers;
 
-        const READMEfile = '# ${title}
+        const READMEfile = `# ${title}
 
         ## * Table of Contents *
 
-            -[Description](#description)
+            - [Description](#description)
             - [Installation](#installation)
             - [Usage](#usage)
             - [License](#license)
@@ -83,24 +83,32 @@ inquirer
             - [Questions](#questions)
 
         ## * Description *
-            ${ description }
+            ${description}
 
         ## * Installation *
-            ${ installation }
+            ${installation}
 
         ## * Usage *
-            ${ usage }
+            ${usage}
 
         ## * Contributors *
-            ${ contributors }
+            ${contributors}
 
         ## * Input *
-            ${ input }
+            ${input}
 
         ## * Questions *
-            - Github: ${ github }
-        - Email: ${ email }
+        - Github: ${github}
+        - Email: ${email}
 
-        This project is ${ license } licensed.'
+        This project is ${license} licensed.`
+
+        fs.writeFile("README.md", READMEfile, err => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("Success!");
+            }
+        });
 
     });
